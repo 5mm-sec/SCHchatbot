@@ -1,0 +1,134 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content" >
+    <!--
+    /*
+     *	This content is generated from the API File Info.
+     *	(Alt+Shift+Ctrl+I).
+     *
+     *	@desc
+     *	@file 		chatbot_main_layout
+     *	@date 		Friday 08th of September 2023 09:54:35 AM
+     *	@title 		Page 1
+     *	@author
+     *	@keywords
+     *	@generator 	Export Kit v1.3.figma
+     *
+     */
+    -->
+    <ScrollView android:id="@+id/chatbot_main_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+
+
+            <RelativeLayout android:id="@+id/page_chatbot_main_layout_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__chatbot_main_layout_ek2"
+                    android:background="@drawable/_bg__chatbot_main_layout_ek2_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="410dp"
+                    android:layout_height="630dp" />
+
+
+                <RelativeLayout android:id="@+id/frame_5"
+                    android:layout_marginTop="527dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView android:id="@+id/main_new_chat"
+                        android:src="@drawable/main_new_chat"
+                        android:contentDescription="main_new_chat"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="84dp"
+                        android:layout_height="81dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_4"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/main_top_rectangle"
+                        android:background="@drawable/main_top_rectangle_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="59dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_3"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="359dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView android:id="@+id/main_menubutton"
+                        android:src="@drawable/main_menubutton"
+                        android:contentDescription="main_menubutton"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_2"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView android:id="@+id/main_backbutton"
+                        android:src="@drawable/main_backbutton"
+                        android:contentDescription="main_backbutton"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="33dp"
+                        android:layout_height="34dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_1"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/main_chatrecyclerectangle"
+                        android:background="@drawable/main_chatrecyclerectangle_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="380dp"
+                        android:layout_height="432dp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>

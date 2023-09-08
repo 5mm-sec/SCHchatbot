@@ -1,0 +1,171 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content" >
+    <!--
+    /*
+     *	This content is generated from the API File Info.
+     *	(Alt+Shift+Ctrl+I).
+     *
+     *	@desc
+     *	@file 		chatbot_chat_layout
+     *	@date 		Friday 08th of September 2023 10:20:43 AM
+     *	@title 		Page 1
+     *	@author
+     *	@keywords
+     *	@generator 	Export Kit v1.3.figma
+     *
+     */
+    -->
+    <ScrollView android:id="@+id/chatbot_chat_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+
+
+            <RelativeLayout android:id="@+id/page_chatbot_chat_layout_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__chatbot_chat_layout_ek2"
+                    android:background="@drawable/_bg__chatbot_chat_layout_ek2_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="410dp"
+                    android:layout_height="700dp" />
+
+
+                <RelativeLayout android:id="@+id/frame_7"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/chat_top_rectangle"
+                        android:background="@drawable/chat_top_rectangle_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="410dp"
+                        android:layout_height="59dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_6"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="359dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView android:id="@+id/chat_menu_button"
+                        android:src="@drawable/chat_menu_button"
+                        android:contentDescription="chat_menu_button"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_5"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView android:id="@+id/chat_back_button"
+                        android:src="@drawable/chat_back_button"
+                        android:contentDescription="chat_back_button"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="33dp"
+                        android:layout_height="34dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_8"
+                    android:layout_marginTop="69dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/chat_chatrectangle"
+                        android:background="@drawable/chat_chatrectangle_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="380dp"
+                        android:layout_height="570dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_3"
+                    android:layout_marginTop="650dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <EditText   android:id="@+id/chat_send_edittext"
+                        android:background="@drawable/chat_send_edittext_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="305dp"
+                        android:layout_height="39dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_2"
+                    android:layout_marginTop="650dp"
+                    android:layout_marginStart="327dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/chat_send_button"
+                        android:background="@drawable/chat_send_button_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="68dp"
+                        android:layout_height="39dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/frame_1"
+                    android:layout_marginTop="655dp"
+                    android:layout_marginStart="344dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/chat_send_textview"
+                        android:fontFamily="Inter"
+                        android:textSize="17sp"
+                        android:textColor="@color/chat_send_edittext_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="59.5dp"
+                        android:layout_height="32.5dp"
+                        android:text="@string/chat_send_textview_string"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>
