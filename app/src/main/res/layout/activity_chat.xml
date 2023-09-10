@@ -1,21 +1,7 @@
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="wrap_content" >
-    <!--
-    /*
-     *	This content is generated from the API File Info.
-     *	(Alt+Shift+Ctrl+I).
-     *
-     *	@desc
-     *	@file 		chatbot_chat_layout
-     *	@date 		Friday 08th of September 2023 10:20:43 AM
-     *	@title 		Page 1
-     *	@author
-     *	@keywords
-     *	@generator 	Export Kit v1.3.figma
-     *
-     */
-    -->
-    <ScrollView android:id="@+id/chatbot_chat_layout"
+
+    <RelativeLayout android:id="@+id/chatbot_chat_layout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" >
 
@@ -100,12 +86,22 @@
                     android:layout_height="wrap_content"
                     >
 
-                    <View   android:id="@+id/chat_chatrectangle"
+                    <RelativeLayout   android:id="@+id/chat_chatrectangle"
                         android:background="@drawable/chat_chatrectangle_shape"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_width="380dp"
-                        android:layout_height="570dp" />
+                        android:layout_height="570dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerViewChat"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+
+                    </RelativeLayout>
+
+
 
                 </RelativeLayout>
 
@@ -167,5 +163,5 @@
             </RelativeLayout>
         </RelativeLayout>
 
-    </ScrollView>
-</HorizontalScrollView>
+    </RelativeLayout>
+</RelativeLayout>
