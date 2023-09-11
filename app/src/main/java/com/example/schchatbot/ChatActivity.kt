@@ -2,7 +2,7 @@ package com.example.schchatbot
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log // 로그를 사용하기 위한 임포트
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.schchatbot.databinding.ActivityChatBinding

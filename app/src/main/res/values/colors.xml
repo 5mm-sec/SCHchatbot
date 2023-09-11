@@ -21,4 +21,11 @@
     <color name="chat_chatrectangle_color">#C1CEFF</color>
     <color name="chat_send_edittext_color">#FFFFFF</color>
     <color name="chat_send_button_color">#19176D</color>
+
+
+    <color name="_bg__chatbot_guid_ek2_color">#AABCFF</color>
+    <color name="guid_top_rectangle_color">#D7E2FF</color>
+    <color name="guid_chatrecyclerectangle_color">#C1CEFF</color>
+    <color name="guid_1_rectangle_color">#FFFFFF</color>
+    <color name="guid_1_textview_color">#000000</color>
 </resources>
