@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -44,10 +46,27 @@ class HomeFragment : Fragment() {
         // "main_new_chat" ImageView에 클릭 이벤트 설정
         mainNewChatImageView.setOnClickListener {
             // ChatActivity로 이동하는 인텐트 생성
-            Log.d("채팅화면으로 이동","채팅화면으로 이동")
+            Log.d("채팅화면으로 이동", "채팅화면으로 이동")
             val intent = Intent(activity, ChatActivity::class.java)
             startActivity(intent)
         }
+
+        // ChatDatabaseHelper를 사용하여 저장된 채팅 세션의 고유 ID 목록을 가져옴
+        val dbHelper = ChatDatabaseHelper(requireContext())
+        val chatSessionIds = dbHelper.getAllChatSessionIds()
+
+        // 가져온 채팅 세션 ID 목록을 로그에 출력합니다.
+        Log.d("HomeFragment", "채팅 세션 ID 목록: $chatSessionIds")
+
+
+
+        // RecyclerView에 채팅 세션 목록을 표시하기 위한 어댑터 설정
+        val recyclerViewSessions = view.findViewById<RecyclerView>(R.id.recyclerViewRecordChat)
+        val layoutManager = LinearLayoutManager(requireContext())
+        recyclerViewSessions.layoutManager = layoutManager
+        val sessionAdapter = ChatSessionAdapter(chatSessionIds)
+        recyclerViewSessions.adapter = sessionAdapter
+
 
         return view
     }

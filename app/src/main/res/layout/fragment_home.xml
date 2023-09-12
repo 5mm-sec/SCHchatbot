@@ -118,12 +118,17 @@
                     android:layout_height="wrap_content"
                     >
 
-                    <View   android:id="@+id/main_chatrecyclerectangle"
+                    <RelativeLayout   android:id="@+id/main_chatrecyclerectangle"
                         android:background="@drawable/main_chatrecyclerectangle_shape"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_width="380dp"
                         android:layout_height="432dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewRecordChat"
+                        android:layout_width="369dp"
+                        android:layout_height="418dp" />
 
                 </RelativeLayout>
 

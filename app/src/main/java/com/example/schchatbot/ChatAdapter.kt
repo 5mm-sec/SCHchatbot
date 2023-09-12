@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class ChatAdapter(val messages: List<ChatMessage>) : RecyclerView.Adapter<ChatAdapter.ViewHolder>() {
+class ChatAdapter(private val messages: MutableList<ChatMessage>) : RecyclerView.Adapter<ChatAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutResId = if (viewType == USER_MESSAGE_VIEW_TYPE) R.layout.item_user_message else R.layout.item_bot_message
@@ -24,6 +24,17 @@ class ChatAdapter(val messages: List<ChatMessage>) : RecyclerView.Adapter<ChatAd
 
     override fun getItemCount(): Int {
         return messages.size
+    }
+    fun addMessages(newMessages: List<ChatMessage>) {
+        messages.addAll(newMessages)
+        notifyDataSetChanged()
+    }
+
+    fun insertChatMessage(message: ChatMessage) {
+        // 데이터베이스에 메시지 삽입하는 코드
+
+        // 로그에 채팅 세션 저장 확인 메시지 출력
+        Log.d("ChatDatabaseHelper", "채팅 세션 저장 확인: ${message.messageText}")
     }
 
     override fun getItemViewType(position: Int): Int {
