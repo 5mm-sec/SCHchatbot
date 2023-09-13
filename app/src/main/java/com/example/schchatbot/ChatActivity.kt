@@ -1,5 +1,7 @@
 package com.example.schchatbot
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -21,6 +23,7 @@ class ChatActivity : AppCompatActivity() {
     val messages = mutableListOf<ChatMessage>() // messages 리스트를 초기화
     private var currentSessionId: String = ""
     private var previousSessionId: Long = -1
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChatBinding.inflate(layoutInflater)
@@ -38,11 +41,22 @@ class ChatActivity : AppCompatActivity() {
             // chatMessages를 RecyclerView의 어댑터에 추가합니다.
             chatAdapter.addMessages(chatMessages)
         }
-        previousSessionId = sessionId
+
+        currentSessionId = if (sessionId != -1L) ({
+            // 이전 채팅 세션을 클릭한 경우, 현재 세션 ID를 이전 세션의 ID로 설정합니다.
+            previousSessionId
+        }).toString() else {
+            // 이전 채팅 세션을 클릭하지 않은 경우, 새로운 채팅 세션 식별자를 생성합니다.
+            generateChatSessionId()
+        }
+        previousSessionId = intent.getLongExtra("session_id", -1L) // 이전 세션 ID 저장
+        Log.d("이전 세션 id 저장",previousSessionId.toString())
 
         currentSessionId = generateChatSessionId()
+        Log.d("새로운 세션 id",currentSessionId)
         // 화면이 처음 열릴 때 새로운 채팅 세션 식별자 생성
 //        currentChatSessionId = generateChatSessionId()
+
         val chat_send_button = binding.chatSendButton
         chat_send_button.setOnClickListener {
             val chat_send_edittext = binding.chatSendEdittext.text.toString()
@@ -108,6 +122,8 @@ class ChatActivity : AppCompatActivity() {
             }
         }
 
+
+
         val recyclerViewChat = findViewById<RecyclerView>(R.id.recyclerViewChat)
         val layoutManager = LinearLayoutManager(this)
         recyclerViewChat.layoutManager = layoutManager
@@ -115,28 +131,45 @@ class ChatActivity : AppCompatActivity() {
         // ChatAdapter 초기화 및 RecyclerView에 설정
         chatAdapter = ChatAdapter(messages) // messages 리스트를 ChatAdapter 생성자에 전달
         recyclerViewChat.adapter = chatAdapter
+
+        val main_backButton = binding.chatBackButton
+        main_backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
     override fun onPause() {
         super.onPause()
+
         // 화면을 벗어났을 때 채팅 세션을 데이터베이스에 저장
         saveChatSessionToDatabase()
 
         // 이전 채팅 세션을 삭제합니다.
-        deletePreviousChatSession()
+        if (previousSessionId != -1L) {
+            deleteChatSession(previousSessionId)
+        }
+    }
+    private fun deleteChatSession(sessionIdToDelete: Long) {
+        // 이전 채팅 세션을 삭제합니다.
+        val dbHelper = ChatDatabaseHelper(this)
+        dbHelper.deleteChatSession(sessionIdToDelete.toString())
+        Log.d("삭제하는 채팅 세션ID", sessionIdToDelete.toString())
     }
 
 
 
-    private fun deletePreviousChatSession() {
-        if (previousSessionId != -1L) {
+    private fun deletePreviousChatSession(previousSessionIdToDelete: Long) {
+        if (previousSessionIdToDelete != -1L) {
             // 이전 채팅 세션을 삭제합니다.
             val dbHelper = ChatDatabaseHelper(this)
 
-            // previousSessionId와 다른 세션을 삭제하는 로직을 구현합니다.
-            val sessionIdsToDelete = dbHelper.getAllChatSessionIds().filter { it != previousSessionId }
+            // previousSessionIdToDelete와 다른 세션을 삭제하는 로직을 구현합니다.
+            val sessionIdsToDelete = dbHelper.getAllChatSessionIds().filter { it != previousSessionIdToDelete }
 
-            for (sessionId in sessionIdsToDelete) {
-                dbHelper.deleteChatSession(sessionId.toString())
+            for (sessionIdToDelete in sessionIdsToDelete) {
+                dbHelper.deleteChatSession(sessionIdToDelete.toString())
+                Log.d("삭제하는 채팅 세션ID", sessionIdToDelete.toString())
             }
         }
     }
