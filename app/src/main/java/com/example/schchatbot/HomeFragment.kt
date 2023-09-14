@@ -64,7 +64,7 @@ class HomeFragment : Fragment() {
         val recyclerViewSessions = view.findViewById<RecyclerView>(R.id.recyclerViewRecordChat)
         val layoutManager = LinearLayoutManager(requireContext())
         recyclerViewSessions.layoutManager = layoutManager
-        val sessionAdapter = ChatSessionAdapter(chatSessionIds)
+        val sessionAdapter = ChatSessionAdapter(chatSessionIds as MutableList<Long>)
         recyclerViewSessions.adapter = sessionAdapter
 
 
